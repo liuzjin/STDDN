@@ -1,0 +1,78 @@
+############ STDDN Config #############
+# optimizer
+lr: 0.01
+# nei_attn_mask: True
+nei_padding_mask: True
+batch_size: 16
+
+val_mode: multistep
+# Training Prarmeters:
+diffnet: ped_inter_geometric_cond_w_obs_w_history
+
+spatial_emsize: 64
+dropout: 0.0 #0.1 0.3
+esti_goal: acce # acce, pos
+
+history_dim: 6 # if esti_goal==acce 6 else 2d
+history_emsize: 64
+history_lstm: 160
+history_lstm_out: 64
+
+history_nhead: 4
+history_num_layers: 8
+
+has_obstacles: True
+
+egnn_layers: 2
+egnn_hid_dim: 8
+egnn_layers_obs: 1
+egnn_hid_dim_obs: 32
+
+# dataset
+save_model: True
+finetune: True
+resume: False
+total_epochs: 200
+data_config:  ./configs/data_configs/data_finetune_gc.yaml
+rebuild_dataset: True
+data_dict_path: ./dataset_built/pretrain_gc_1104_trainonreal_mt_fn10_t3v1.pkl
+finetune_trainmode: multistep # singlestep/multistep
+time_decay: 0.9
+use_col_focus_loss: False
+collision_threshold: 0.5
+
+dataset_type: timeindex
+finetune_flag: 1
+valid_steps: 10
+data_dir: processed_data_sf
+topk_ped: 6
+sight_angle_ped: 90
+dist_threshold_ped: 4
+topk_obs: 5
+sight_angle_obs: 90
+dist_threshold_obs: 4
+skip_frames: 25
+num_history_feature: 8 
+num_history_velocity: 1
+train_mode: multi
+
+k_eval: 25
+
+seed: 777 #456
+eval_every: 1
+
+# Data Parameters:
+device: cuda
+note: None
+
+ode_method:  'euler'                              
+odeint_atol: 0.0001
+odeint_rtol: 0.001
+grid_size: 0.2
+tau1: 2.2
+tau2: 1
+pred_collision: False
+fused_v: True
+node_embed_dim: 5
+phys_embed_dim: 16
+fusion_embed_dim: 16

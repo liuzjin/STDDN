@@ -1,0 +1,12 @@
+#train:
+#  - './data_origin/hotel/hotel_train.npy'
+#  - './data_origin/hotel/hotel_val.npy'
+#
+#valid:
+#    - './data_origin/hotel/hotel_test.npy'
+train:
+  - './data_origin/hotel/HOTEL_Dataset_time0-1806_timeunit0.08.npy'
+  - './data_origin/hotel/HOTEL_Dataset_time1806-3612_timeunit0.08.npy'
+  - './data_origin/hotel/HOTEL_Dataset_time3612-5418_timeunit0.08.npy'
+valid:
+    - './data_origin/hotel/HOTEL_Dataset_time6321-7224_timeunit0.08.npy'

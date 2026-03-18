@@ -1,0 +1,13 @@
+#train:
+#  - './data_origin/eth/eth_train.npy'
+#  - './data_origin/eth/eth_val.npy'
+#
+#valid:
+#    - './data_origin/eth/eth_test.npy'
+train:
+  - './data_origin/eth/ETH_Dataset_time0-1160_timeunit0.08.npy'
+  - './data_origin/eth/ETH_Dataset_time1160-2320_timeunit0.08.npy'
+  - './data_origin/eth/ETH_Dataset_time2320-3480_timeunit0.08.npy'
+
+valid:
+  - './data_origin/eth/ETH_Dataset_time3480-4640_timeunit0.08.npy'
